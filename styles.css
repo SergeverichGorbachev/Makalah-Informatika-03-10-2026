@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /*to all*/
+
+header {
+    position: fixed;      
+    top: 0;               
+    width: 100%;          
+    background-color: white; 
+    display: flex;        
+    justify-content: space-between; /*important dont delete pls pls */
+    align-items: center; 
+    padding: 15px 50px;   
+    z-index: 1000;        
+}
+
+
+header img {
+    height: 40px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 0 15px;
+    font-family: 'Days One', sans-serif;
+    font-size: 14px;
+}
+
+
+.hero {
+    height: 100vh; /* MAKES FULL SCREEN, VH = viewport height (1vh = 1% browser height) */
+    
+    /* Dark Overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('BannerBackground.png'); /*geminibackround gradient help */
+    
+    background-size: cover;     /* Image FIT the WHOLE AREA */
+    background-position: center; 
+    
+    display: flex;
+    align-items: center;       
+    padding-left: 10%;         
+    color: white;              
+}
+
+.welcome h1 {
+    font-family: 'Days One';
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-family: 'ABeeZee';
+    font-size: 18px;
+    max-width: 500px;         
+    margin-bottom: 20px;
+}
+
+
+.button {
+    display: inline-block;  /* jadi bisa dibagi ada konten di kiri dan kanan di line yang sama */
+    padding: 12px 30px;
+    background-color: #0066b1; /* Blue BMW */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*About*/
+
+.contentblock1 {
+    display: flex;            /* side-by-side TEXT!!. IMPORTANT*/
+    align-items: center;      
+    padding: 100px 10%;       
+    gap: 60px;                /* padding between image and text */
+    background: linear-gradient(180deg, #111111 0%, #000000 100%); /* from gemini */
+    color: white;
+}
+
+.image-side, .text-side {
+    flex: 1;                  /* both "boxes" 50% width */
+}
+
+.image-side img {
+    width: 100%;              
+    height: auto;
+}
+
+
+
+
+/*all three cards code below*/
+
+
+
+.contentblock2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal column 4 content */
+    gap: 20px;                             /* Gap between cards */
+    padding: 60px 5%;                      /* Side padding for BMW LOOK */
+}
+
+.card {
+    height: 550px;             /* Fixed height */
+    position: relative;        /* Required to stack text on top of image */
+    overflow: hidden;          /* IMPORTANT DONT DELETE PLS PLS: Crops the image when it zooms */
+    display: flex;
+    align-items: flex-end;     /* Pushes text to the bottom of the card */
+    padding: 30px;
+}
+
+.card-text {
+    position: relative;
+    z-index: 2;                /* Keeps text on top layer */
+    color: white;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.tag {
+    background-color: white;   /* The white box */
+    color: black;              /* Blaccc text inside the box */
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Card 1 Image */
+.card-1 { 
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('BeerImage1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Card 2 Image */
+.card-2 { 
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('BeerImage2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Card 3 Image */
+.card-3 { 
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8), transparent), url('BeerImage3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*all identity code below*/
+
+.identity-section {
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background-color: white; /* Clean BMW white background */
+    gap: 60px;
+}
+
+.identity-image {
+    flex: 1.2; /* Takes up slightly more space than the text */
+    height: 450px;
+    background-image: url('your-identity-image.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    /* THE FADE: Fades the image from 100% visible on left to 0% on right */
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);  /*custom made*/
+}
+
+.identity-text {
+    flex: 1;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.identity-text h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #262626;
+}
+
+.identity-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4c4c4c;
+    margin-bottom: 30px;
+}
+
+.learn-more {
+    text-decoration: none;
+    color: #262626;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    color: #0066b1; /* BMW Blue hover */
+}
+
+.identity-image {
+    flex: 1; 
+    max-width: 650px; 
+    height: 400px; 
+    
+    background-image: url('Minecraftimgplaceholder.png');
+    background-size: cover; 
+    background-position: center;
+
+}
+
+/*footer below */
+
+footer {
+    background-color: white;
+    padding: 80px 10% 40px 10%;
+    border-top: 1px solid #e6e6e6;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns like BMW. Customized by Gemini. */
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col h4 {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.footer-col p {
+    display: block;
+    text-decoration: none;
+    color: #262626;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #0066b1; /* Classic Blue hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 30px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons a {
+    color: #262626;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #666;
+}
